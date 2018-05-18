@@ -40,6 +40,7 @@ class FormController extends ActionController
         $this->view->assignMultiple([
             'form' => $form,
             'interests' => $interests,
+            'data' => $this->configurationManager->getContentObject()->data
         ]);
     }
 
