@@ -62,7 +62,7 @@ class FormController extends ActionController
             $this->redirect('index');
         }
         if ($this->request->hasArgument('contentid')) {
-            if ($this->request->getArgument('contentid') === $this->configurationManager->getContentObject()->data['uid']) {
+            if (intval($this->request->getArgument('contentid')) === intval($this->configurationManager->getContentObject()->data['uid'])) {
                 $this->handleRegistration($form);
             } else {
                 return '';
